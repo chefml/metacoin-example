@@ -1,0 +1,16 @@
+version: '3'
+services:
+  testrpc:
+    image: dougvk/testrpc:latest
+    command: bash -c "testrpc -h 0.0.0.0"
+    ports:
+      - "7000:8545"
+  truffle3:
+    image: dougvk/truffle3:latest
+    command: bash
+    stdin_open: true
+    tty: true
+    ports:
+      - "7001:8080"
+    volumes:
+      - ../:/app
